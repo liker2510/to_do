@@ -1,0 +1,12 @@
+.header {
+    width: 100%;
+    display: flex;
+}
+.todo-control {
+    width: 90%;
+   display: flex;
+}
+.header-input {
+    width: 100%;
+    
+}
