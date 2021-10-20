@@ -30,9 +30,14 @@ const render = function () {
             render();
         })
         
+        // li.querySelector('.todo-remove').addEventListener('click', function() {
+        //     let index = li.getAttribute('index');
+        //     toDoData.splice(+index, 1);
+        //     render();
+        // })
         li.querySelector('.todo-remove').addEventListener('click', function() {
-            let index = li.getAttribute('index');
-            toDoData.splice(+index, 1);
+            let index = +this.parentElement.parentElement.attribute.index.value;
+            toDoData.splice(index, 1);
             render();
         })
 
