@@ -11,6 +11,7 @@ const render = function () {
     todoCompleted.innerHTML = '';
     toDoData.forEach(function (item, index) {
         const li = document.createElement('li');
+
         li.classList.add('todo-item');
 
         li.innerHTML = '<span class="text-todo">' + item.text + '</span>' +
@@ -24,16 +25,19 @@ const render = function () {
         }else {
             todoList.append(li);
         }
-
         li.querySelector('.todo-complete').addEventListener('click', function() {
             item.completed = !item.completed;
+            localStorage.setItem("todoListArray", JSON.stringify(toDoData));
             render();
         })
         
         li.querySelector('.todo-remove').addEventListener('click', function() {
             toDoData.splice(`${index}`, 1);
+            localStorage.setItem("todoListArray", JSON.stringify(toDoData));
             render();
+
         })
+      
     })
 }
 
